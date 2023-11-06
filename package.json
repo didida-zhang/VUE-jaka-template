@@ -5,21 +5,7 @@
   "scripts": {
     "build": "run-p type-check \"build-only {@}\" --",
     "build-only": "vite build",
-    "dev": "vite --mode development",
-    "eslint": "eslint --cache --ext .js,.jsx,.ts,.tsx ./",
-    "eslint:fix": "npm run eslint -- --fix",
-    "format": "prettier --write src/",
-    "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
-    "lint:eslint": "eslint --fix --ext .js,.ts,.vue ./src",
-    "lint:lint-staged": "lint-staged",
-    "lint:prettier": "prettier --write \"src/**/*.{js,ts,json,tsx,css,less,scss,vue,html,md}\"",
-    "lint:stylelint": "stylelint --cache --fix \"**/*.{vue,less,postcss,css,scss}\" --cache --cache-location node_modules/.cache/stylelint/",
-    "prepare": "husky install",
-    "preview": "vite preview --mode production",
-    "type-check": "vue-tsc --noEmit -p tsconfig.app.json --composite false"
-  },
-  "lint-staged": {
-    "package.json": "npx sort-package-json"
+    "dev": "vite --mode development"
   },
   "dependencies": {
     "ant-design-vue": "^4.0.6",
@@ -42,8 +28,6 @@
     "@vue/tsconfig": "^0.4.0",
     "eslint": "^8.49.0",
     "eslint-plugin-vue": "^9.17.0",
-    "husky": "^8.0.3",
-    "lint-staged": "^15.0.2",
     "npm-run-all2": "^6.1.1",
     "prettier": "^3.0.3",
     "typescript": "~5.2.0",
