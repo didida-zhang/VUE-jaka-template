@@ -12,6 +12,8 @@ import { createPinia } from 'pinia'
 import App from './App'
 import router from './router'
 import 'virtual:windi.css'
+import Antd from 'ant-design-vue'
+import 'ant-design-vue/dist/reset.css'
 import {
   renderWithQiankun,
   qiankunWindow,
@@ -28,7 +30,7 @@ const render = (props?: any) => {
   app
     .use(createPinia())
     .use(router)
-    //
+    .use(Antd)
     .mount(container ? container.querySelector('#sub-app-box') : '#sub-app-box')
   if (qiankunWindow.__POWERED_BY_QIANKUN__) {
     console.log('正在作为子应用运行')

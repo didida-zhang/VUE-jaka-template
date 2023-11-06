@@ -5,7 +5,6 @@
  * @Date: 2023-11-03 16:09:56
  * @Description:
  */
-import { ConfigProvider } from 'ant-design-vue'
 import type { ThemeConfig } from 'ant-design-vue/es/config-provider/context'
 import { defineComponent } from 'vue'
 import { RouterView } from 'vue-router'
@@ -29,9 +28,9 @@ const App = defineComponent({
     }
     return () => {
       return (
-        <ConfigProvider theme={themeToken}>
+        <a-config-provider theme={themeToken}>
           <RouterView></RouterView>
-        </ConfigProvider>
+        </a-config-provider>
       )
     }
   }

@@ -6,7 +6,6 @@
  * @Description:
  */
 // 按需引入组件
-import { Button } from 'ant-design-vue'
 import { defineComponent } from 'vue'
 const HomeView = defineComponent({
   name: 'HomeView',
@@ -14,7 +13,7 @@ const HomeView = defineComponent({
     return () => {
       return (
         <div class={'flex justify-center h-100vh items-center'}>
-          <Button type='primary'>点击</Button>
+          <a-button type='primary'>点击</a-button>
         </div>
       )
     }

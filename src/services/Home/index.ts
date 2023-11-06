@@ -7,6 +7,7 @@
  */
 import httpRequest, { grpcRequest } from '@/utils/http'
 import type { Cartpos, JointPos, LoginData } from './type'
+import { apis } from '@/api/config'
 export const homeApi = {
   /**
    * 示例接口 登录接口
@@ -16,7 +17,7 @@ export const homeApi = {
     try {
       const other: any = { hideError: true }
       const res = await httpRequest({
-        url: '/user/login',
+        url: apis.login,
         method: 'post',
         data,
         ...other
@@ -31,7 +32,7 @@ export const homeApi = {
    */
   kineforward: async (jointpos: JointPos): Promise<Cartpos> => {
     try {
-      const res = await grpcRequest('MSGID_KINEFORWARD', { jointpos })
+      const res = await grpcRequest(apis.kineforward, { jointpos })
       return res.data.cartpos
     } catch (err) {
       return { x: 0, y: 0, z: 0, a: 0, b: 0, c: 0 }
