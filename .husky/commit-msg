@@ -1,0 +1,11 @@
+###
+ # @File name: 
+ # @Author: LSZ
+ # @Version: V1.0
+ # @Date: 2023-12-01 15:16:50
+ # @Description: 
+### 
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+npx --no -- commitlint --edit "$1"
