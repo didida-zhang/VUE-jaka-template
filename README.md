@@ -1,4 +1,11 @@
-# vue-sub-tenplate
+<!--
+ * @File name: 
+ * @Author: LSZ
+ * @Version: V1.0
+ * @Date: 2023-12-01 16:47:29
+ * @Description: 
+-->
+# vue-sub-template
 
 This template should help get you started developing with Vue 3 in Vite.
 
