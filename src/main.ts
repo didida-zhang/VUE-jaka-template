@@ -12,12 +12,12 @@ import Antd from "ant-design-vue";
 import "ant-design-vue/dist/reset.css";
 import AppView from "./App";
 import createRouter from "./router";
-import { registerMicroApps, start } from "qiankun";
 import {
   renderWithQiankun,
   qiankunWindow,
   type QiankunProps,
 } from "vite-plugin-qiankun/dist/helper";
+
 import "./assets/main.css";
 
 let app: any = null;
