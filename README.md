@@ -5,14 +5,11 @@
  * @Date: 2023-12-01 16:47:29
  * @Description: 
 -->
-# vue-sub-template
+# robot-face-main
 
-JAKA子应用模板，Git上设置->通用->高级->导出项目 中导出。
-创建项目时选择导入模板即可
+RobotFace页面Layout，主要页面Layout、菜单路由等
 
-## Customize configuration
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
 
 ## Project Setup
 
@@ -32,8 +29,3 @@ npm run dev
 npm run build
 ```
 
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
-```

@@ -6,15 +6,15 @@
  * @Description:
  */
 import { createRouter, createWebHistory } from "vue-router";
-import HomeView from "../views/Home";
+import HomeView from "@/views/Home";
 
 const router = (base: string) => {
   return createRouter({
     history: createWebHistory(base),
     routes: [
       {
-        path: "/",
-        name: "home",
+        path: "/:pathMatch(.*)*",
+        name: "HomeView",
         component: HomeView,
       },
     ],

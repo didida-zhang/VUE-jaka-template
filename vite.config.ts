@@ -58,7 +58,7 @@ export default defineConfig(({ mode }) => {
     },
     server: {
       host: "0.0.0.0",
-      port: 31201,
+      port: 31230,
       origin: "//localhost:31107",
       headers: {
         "Access-Control-Allow-Origin": "*",

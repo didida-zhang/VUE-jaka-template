@@ -6,30 +6,21 @@
  * @Description:
  */
 
-import { defineComponent, onMounted, ref } from "vue";
-import { RouterView } from "vue-router";
+import { KeepAlive, defineComponent, ref } from "vue";
+import { RouterView, useRouter } from "vue-router";
 import { legacyLogicalPropertiesTransformer } from "ant-design-vue";
 import { getThemeToken } from "@/utils/theme";
-import { registerMicroApps, start } from "qiankun";
+import { useAppConfig } from "./stores/app";
 
 const App = defineComponent({
   name: "App",
   setup: () => {
+    const appRouter = useRouter();
+    (window as any)["RobotFaceMain"] = {
+      router: appRouter,
+    };
     const color = ref<string>("red");
-    // 加载子应用示例
-    onMounted(() => {
-      registerMicroApps([
-        {
-          name: "app1",
-          entry: "http://172.30.0.56:31202/",
-          container: "#container",
-          activeRule: "/app1", //
-          props: {},
-        },
-      ]);
-      // 启动 qiankun
-      start();
-    });
+    const app = useAppConfig();
     return () => (
       <a-config-provider
         hash-priority="high"
@@ -38,8 +29,15 @@ const App = defineComponent({
           token: getThemeToken(color.value),
         }}
       >
-        <RouterView></RouterView>
-        <div id="container"></div>
+        <a-spin size="large" spinning={app.loading}>
+          <RouterView
+            v-slots={{
+              default: ({ Component }: any) => {
+                return <KeepAlive>{Component}</KeepAlive>;
+              },
+            }}
+          ></RouterView>
+        </a-spin>
       </a-config-provider>
     );
   },

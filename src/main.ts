@@ -19,8 +19,12 @@ import {
 } from "vite-plugin-qiankun/dist/helper";
 
 import "./assets/main.css";
+import { prefetchMircoApps } from "./micro";
 
 let app: any = null;
+// 写一个全局的方法，方便主子应用调用
+(window as any)["common_utils"] = (window as any)["common_utils"] || {};
+
 const render = (props?: any) => {
   const { container } = props;
   app = createApp(AppView);
@@ -45,6 +49,7 @@ const render = (props?: any) => {
 if (!qiankunWindow.__POWERED_BY_QIANKUN__) {
   render({});
 }
+prefetchMircoApps();
 renderWithQiankun({
   bootstrap() {
     console.log("[vue] vue app bootstraped");
