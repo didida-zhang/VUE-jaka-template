@@ -1,1 +1,60 @@
 
+@import './antd.css';
+@import './table.css';
+* {
+  user-select: none;
+}
+#app {
+  width: 100%;
+  height: 100%;
+}
+#robot-face > div {
+  height: 100%;
+}
+body > #app {
+  min-height: 960px;
+  overflow: hidden;
+  width: 19.2rem;
+  margin: 0 auto;
+}
+.a-spin {
+  width: 100%;
+  height: 100%;
+}
+.ant-spin-text {
+  margin-top: 60px;
+  padding-left: 50px;
+  font-size: 20px;
+}
+.ant-btn {
+  line-height: 0.35rem;
+}
+.ant-select .ant-select-arrow {
+  margin-top: -0.08rem;
+}
+.ant-spin-dot-item {
+  width: 20px;
+  height: 20px;
+}
+.ant-spin-spinning {
+  max-height: 90vh !important;
+  z-index: 9999;
+}
+#page-box .ant-spin-spinning > span:nth-child(1) {
+  width: 40px;
+  height: 40px;
+}
+.ant-spin-container,
+.ant-spin-nested-loading {
+  height: 100% !important;
+}
+.ant-input,
+.ant-input-password {
+  padding: 0 14px;
+}
+.ant-form-item-explain-error {
+  line-height: 28px;
+}
+.ant-message-notice-content {
+  padding: 0 14px;
+}

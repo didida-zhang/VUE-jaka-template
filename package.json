@@ -1,11 +1,11 @@
 {
-  "name": "vue-sub-trmplate",
+  "name": "robot-face-info",
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --mode development",
     "preview": "vite preview",
-    "build": "vite build",
+    "build": "vite build --mode production",
     "type-check": "vue-tsc -p tsconfig.app.json --composite false",
     "lint:eslint": "eslint --fix --ext .js,.ts,.vue ./src",
     "lint:prettier": "prettier --write \"src/**/*.{js,ts,json,tsx,css,less,scss,vue,html,md}\"",
@@ -15,12 +15,17 @@
   },
   "dependencies": {
     "ant-design-vue": "^4.0.7",
+    "echarts": "^5.4.3",
+    "jaka-ui": "^0.0.2-beta.55",
+    "jaka-utils": "^2.0.46",
     "pinia": "^2.1.7",
     "qiankun": "^2.10.16",
     "vite-plugin-qiankun": "^1.0.15",
-    "vite-plugin-windicss": "^1.9.2",
     "vue": "^3.3.4",
-    "vue-router": "^4.2.5"
+    "vue-echarts": "^6.6.8",
+    "vue-i18n": "^9.8.0",
+    "vue-router": "^4.2.5",
+    "vuedraggable": "^4.1.0"
   },
   "lint-staged": {
     "src/**/*.{js,jsx,ts,tsx}": [
@@ -43,8 +48,10 @@
     "eslint": "^8.49.0",
     "eslint-plugin-vue": "^9.17.0",
     "husky": "^8.0.3",
+    "less": "^4.2.0",
     "lint-staged": "^15.1.0",
     "npm-run-all2": "^6.1.1",
+    "postcss-pxtorem": "^6.0.0",
     "prettier": "^3.0.3",
     "terser": "^5.24.0",
     "typescript": "~5.2.0",

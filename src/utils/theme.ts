@@ -8,5 +8,10 @@
 export const getThemeToken = (color: string) => {
   return {
     colorPrimary: color,
+    fontSize: "0.16rem",
+    borderRadius: 4,
+    controlHeight: "0.4rem",
+    controlPaddingHorizontal: "0.16rem",
+    lineHeight: "0.38rem",
   };
 };

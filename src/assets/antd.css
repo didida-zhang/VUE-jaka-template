@@ -1,0 +1,36 @@
+.ant-message-notice-content {
+  padding: 4px 16px;
+}
+.ant-input {
+  padding: 0px 11px;
+}
+.ant-input-affix-wrapper {
+  padding: 0px 16px;
+}
+.ant-checkbox .ant-checkbox-inner {
+  width: 32px;
+  height: 32px;
+}
+
+.ant-checkbox .ant-checkbox-inner::after {
+  width: 10px;
+  height: 16px;
+}
+.ant-transfer-list-header {
+  height: 60px;
+  padding: 16px 12px 16px;
+}
+.ant-checkbox-indeterminate .ant-checkbox-inner:after {
+  width: 16px;
+  height: 16px;
+}
+.ant-transfer-list-content-item {
+  padding: 4px 12px;
+}
+.ant-spin-dot-spin {
+  font-size: 40px !important;
+}
+.ant-spin-dot-item {
+  width: 16px;
+  height: 16px;
+}

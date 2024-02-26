@@ -5,13 +5,14 @@
  * @Date: 2023-12-04 09:46:19
  * @Description:
  */
-import { reactive } from "vue";
+import { reactive, ref } from "vue";
 import { defineStore } from "pinia";
 import { loadMicroApp } from "qiankun";
 import type { MicroApp } from "@/micro";
 
 export const useMicroApp = defineStore("microApp", () => {
   const microAppsInstance = reactive<any>({});
+  const microApps = ref<MicroApp[]>([]);
   const registerApps = (app: MicroApp) => {
     if (!microAppsInstance[app.name]) {
       microAppsInstance[app.name] = loadMicroApp(app);
@@ -28,5 +29,5 @@ export const useMicroApp = defineStore("microApp", () => {
       microAppsInstance[app.name] = null;
     }
   };
-  return { microAppsInstance, registerApps, uninstallMicroApp };
+  return { microAppsInstance, registerApps, uninstallMicroApp, microApps };
 });

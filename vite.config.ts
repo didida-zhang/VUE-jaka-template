@@ -11,8 +11,6 @@ import { defineConfig, loadEnv } from "vite";
 import vue from "@vitejs/plugin-vue";
 import vueJsx from "@vitejs/plugin-vue-jsx";
 import qiankun from "vite-plugin-qiankun";
-// 样式插件 推荐vscode安装windicss  文档地址：https://cn.windicss.org/utilities/animations/animation.html
-import WindiCSS from "vite-plugin-windicss";
 import legacy from "@vitejs/plugin-legacy";
 
 export default defineConfig(({ mode }) => {
@@ -21,8 +19,7 @@ export default defineConfig(({ mode }) => {
     plugins: [
       vue(),
       vueJsx(),
-      WindiCSS(),
-      qiankun("sub-app-name", {
+      qiankun("robot-face-info", {
         // 微应用名字，与主应用注册的微应用名字保持一致
         useDevMode: true,
       }),
@@ -58,21 +55,21 @@ export default defineConfig(({ mode }) => {
     },
     server: {
       host: "0.0.0.0",
-      port: 31230,
-      origin: "//localhost:31107",
+      port: Number(env.VITE_PORT) || 41000,
+      origin: env.VITE_BASE_URL,
       headers: {
         "Access-Control-Allow-Origin": "*",
       },
       proxy: {
-        "/api": {
-          rewrite: (path: string) => path.replace(/^\/api/, ""),
-          target: "http://172.30.3.235:10014",
+        "/webapp/api": {
+          rewrite: (path: any) => path.replace(/^\/api/, "/api"),
+          target: "http://localhost:31000",
           changeOrigin: true,
         },
       },
     },
-    paths: {
-      "@/*": ["./src/*"],
+    build: {
+      outDir: `../jaka-web-main/dist/${env.VITE_BASE_URL}`,
     },
     output: {
       library: `app-[name]`,

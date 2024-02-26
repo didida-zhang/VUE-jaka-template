@@ -5,9 +5,9 @@
  * @Date: 2023-12-01 16:47:29
  * @Description: 
 -->
-# robot-face-main
+# vue-subtemplate
 
-RobotFace页面Layout，主要页面Layout、菜单路由等
+子应用模板
 
 
 

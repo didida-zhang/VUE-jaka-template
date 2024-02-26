@@ -1,13 +1,47 @@
-<!DOCTYPE html>
+<!--
+ * @File name: 
+ * @Author: LSZ
+ * @Version: V1.0
+ * @Date: 2023-12-04 09:52:23
+ * @Description: 
+-->
+<!doctype html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <link rel="icon" href="/favicon.ico">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no"
+    />
+
     <title>Vite App</title>
   </head>
   <body>
     <div id="app"></div>
+    <script>
+      (function (a, b) {
+        // 页面自适应脚本
+        var c = a.documentElement,
+          d = "orientationchange" in window ? "orientationchange" : "resize",
+          e = (window.recalc = function () {
+            var a = c.clientWidth;
+            if (a) {
+              var fontsize = a / 19.2;
+              if (fontsize < 50) {
+                fontsize = 50;
+              }
+              if (fontsize >= 100) {
+                fontsize = 100;
+              }
+              c.style.fontSize = fontsize + "px";
+            }
+          });
+        a.addEventListener &&
+          (b.addEventListener(d, e, !1),
+          a.addEventListener("DOMContentLoaded", e, !1));
+      })(document, window);
+    </script>
     <script type="module" src="/src/main.ts"></script>
   </body>
 </html>

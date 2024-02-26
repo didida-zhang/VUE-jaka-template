@@ -1,0 +1,100 @@
+.table-striped {
+  background-color: #f8f8fb;
+}
+.ant-table-wrapper .ant-table-thead > tr > th {
+  background: #e3e5eb;
+  height: 0.57rem;
+  font-size: 0.16rem;
+  padding: 0.16rem;
+}
+.ant-table-wrapper
+  .ant-table-container
+  table
+  > thead
+  > tr:first-child
+  > *:first-child {
+  border-start-start-radius: 0.08rem;
+}
+.ant-table-wrapper .ant-table-thead > tr > th:first-child {
+  border-bottom-left-radius: 0.08rem;
+}
+.ant-table-wrapper
+  .ant-table-container
+  table
+  > thead
+  > tr:first-child
+  > *:last-child {
+  border-start-end-radius: 0.08rem;
+}
+.ant-table-wrapper .ant-table-thead > tr > th:last-child {
+  border-bottom-right-radius: 0.08rem;
+}
+.ant-table-wrapper
+  .ant-table-thead
+  > tr
+  > th:not(:last-child):not(.ant-table-selection-column):not(
+    .ant-table-row-expand-icon-cell
+  ):not([colspan])::before {
+  background: none;
+}
+.ant-table-tbody > tr > td {
+  border-top: none;
+}
+.ant-table-wrapper
+  .ant-table:not(.ant-table-bordered)
+  .ant-table-tbody
+  > tr
+  > td {
+  border-top: none;
+  height: 0.6rem;
+  padding: 0 16px;
+}
+.ant-table-wrapper
+  .ant-table:not(.ant-table-bordered)
+  .ant-table-tbody
+  > tr
+  > td:first-child {
+  border-top-left-radius: 0.08rem;
+  border-bottom-left-radius: 0.08rem;
+  padding-left: 0.34rem;
+}
+.ant-table-wrapper
+  .ant-table:not(.ant-table-bordered)
+  .ant-table-tbody
+  > tr
+  > td:last-child {
+  border-top-right-radius: 0.08rem;
+  border-bottom-right-radius: 0.08rem;
+}
+.ant-table-wrapper
+  .ant-table:not(.ant-table-bordered)
+  .ant-table-tbody
+  > tr:last-child
+  > td {
+  border-bottom: none;
+}
+.ant-table-wrapper .ant-table-tbody > tr > td {
+  padding: 0;
+}
+
+.ant-table-wrapper
+  .ant-table:not(.ant-table-bordered)
+  .ant-table-tbody
+  > tr
+  > td:first-child::before {
+  content: "";
+  display: inline-block;
+  background: url("/src/assets/images/table-arrow.svg") no-repeat;
+  background-size: cover;
+  width: 0.06rem;
+  height: 0.22rem;
+  position: absolute;
+  left: 0;
+  top: calc(50% - 0.11rem);
+}
+.ant-table-tbody > tr:nth-child(1) > td:first-child::before {
+  display: none !important;
+}
+.ant-table-wrapper .ant-table-tbody > tr.ant-table-placeholder {
+  display: none;
+}

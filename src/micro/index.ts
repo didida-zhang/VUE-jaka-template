@@ -1,3 +1,4 @@
+import { useMicroApp } from "@/stores/microApp";
 import { prefetchApps } from "qiankun";
 
 /*
@@ -14,34 +15,19 @@ export type MicroApp = {
   activeRule: string | boolean;
   props: any;
 };
-export const microApps: MicroApp[] = [
-  {
-    name: "info",
-    entry: "http://172.30.0.56:31210/",
-    container: "#info",
-    activeRule: true, //
-    props: {
-      baseName: "/info",
-    },
-  },
-  {
-    name: "io",
-    entry: "http://172.30.0.56:31220/",
-    container: "#io",
-    activeRule: true, //
-    props: {
-      baseName: "/io",
-    },
-  },
-];
-export function prefetchMircoApps() {
-  const apps = microApps.map(({ name, entry }) => {
+export const microApps: MicroApp[] = [];
+export function prefetchMircoApps(baseName: string) {
+  const microApp = useMicroApp();
+  microApp.microApps = microApps.map(({ name, entry, props, activeRule }) => {
     return {
       name: name,
       container: "#" + name,
-      activeRule: true,
+      activeRule,
       entry,
+      props: {
+        baseName: baseName + props.baseName,
+      },
     };
   });
-  prefetchApps(apps); // 预加载微应用的静态资源
+  prefetchApps(microApp.microApps); // 预加载微应用的静态资源
 }

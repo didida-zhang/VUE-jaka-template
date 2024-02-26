@@ -2,14 +2,13 @@
  * @File name:
  * @Author: LSZ
  * @Version: V1.0
- * @Date: 2023-12-01 17:26:54
+ * @Date: 2023-12-04 09:46:19
  * @Description:
  */
 import { ref } from "vue";
 import { defineStore } from "pinia";
 
-export const useAppConfig = defineStore("app", () => {
-  const loading = ref(false);
-
-  return { loading };
+export const useLoading = defineStore("loading", () => {
+  const app = ref(false);
+  return { app };
 });
